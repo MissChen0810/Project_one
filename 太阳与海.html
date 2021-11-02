@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: skyblue;
+            /*height: 1000px;*/
+            overflow: hidden;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        .circle::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            animation: sun 1.5s linear infinite;
+        }
+
+        .circle::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            animation: sun 1.5s linear infinite 500ms;
+        }
+
+        .seal {
+            width: 100%;
+            height: 235px;
+            background: url("img/1.png") no-repeat center 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            opacity: 0.6;
+            animation: sea 1s infinite alternate .7s;
+        }
+
+        .seal2 {
+            width: 100%;
+            height: 211px;
+            background: url("img/2.png") no-repeat center 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            opacity: 0.9;
+            animation: sea 1s infinite alternate;
+        }
+
+        /* 定义动画*/
+        /*太阳*/
+        @keyframes sun {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /*大海*/
+        @keyframes sea {
+            from {
+                bottom: 0;
+            }
+            to {
+                bottom: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="circle"></div>
+<div class="seal"></div>
+<div class="seal2"></div>
+</body>
+</html>
